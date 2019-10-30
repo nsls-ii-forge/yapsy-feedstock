@@ -1,0 +1,39 @@
+{% set name = "yapsy" %}
+{% set version = "1.12.2" %}
+{% set sha256 = "d8113d9f9c74eacf65b4663c9c037d278c9cb273b5eee5f0e1803baeedb23f8b" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: {{ sha256 }}
+
+build:
+  number: 0
+  noarch: "python"
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+
+requirements:
+  host:
+    - python >=3.6
+    - pip
+  run:
+    - python >=3.6
+
+test:
+  requires:
+    - pytest
+  imports:
+    - yapsy
+  commands:
+    - pytest
+
+about:
+  home: "http://yapsy.sourceforge.net"
+  license: "BSD"
+  license_family: "BSD"
+  license_file: LICENSE
+  summary: "Yet another plugin system"
+
