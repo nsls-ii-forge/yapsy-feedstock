@@ -22,6 +22,10 @@ requirements:
   run:
     - python >=3.6
 
+test:
+  imports:
+    - yapsy
+
 about:
   home: "http://yapsy.sourceforge.net"
   license: "BSD"
