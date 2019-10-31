@@ -1,4 +1,4 @@
-{% set name = "yapsy" %}
+{% set name = "Yapsy" %}
 {% set version = "1.12.2" %}
 {% set sha256 = "d8113d9f9c74eacf65b4663c9c037d278c9cb273b5eee5f0e1803baeedb23f8b" %}
 
@@ -23,12 +23,8 @@ requirements:
     - python >=3.6
 
 test:
-  requires:
-    - pytest
   imports:
     - yapsy
-  commands:
-    - pytest
 
 about:
   home: "http://yapsy.sourceforge.net"
